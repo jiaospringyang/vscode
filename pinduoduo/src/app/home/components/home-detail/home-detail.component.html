@@ -1,0 +1,15 @@
+<div *ngIf="tabLink === 'hot' else other">
+    <app-image-slider [imageSliders]="imageSliders" [sliderHeight]="'160px'">
+    </app-image-slider>
+    <app-horizontal-grid>
+        <div appGridItem [display]="'grid'" [place]="'center'" *ngFor="let grid of grids">
+            <img appGridItemImage [src]="grid.icon" [alt]="grid.link">
+            <span appGridItemTitle>{{grid.title}}</span>
+        </div>
+    </app-horizontal-grid>
+</div>
+<ng-template #other>
+    <h1>other works</h1>
+</ng-template>
+<a [routerLink]="['grand']">redirect to grand</a>
+<router-outlet></router-outlet>

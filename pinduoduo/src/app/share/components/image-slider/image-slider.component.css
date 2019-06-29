@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.container .image-slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory; /* 强制横轴吸附 */
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start; /* 吸附 */
+}
+
+.nav-section {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 20px;
+   background: black;
+   opacity: 0.5;
+   color: #fff;
+   display: flex;
+   justify-content: flex-end;
+   align-items: stretch;
+}
+
+.nav-section .slide-buttons {
+    width: 10px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.nav-section .slide-button-select {
+    background-color: red;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }

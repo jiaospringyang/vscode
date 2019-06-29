@@ -1,0 +1,10 @@
+<ul [ngStyle]="{'background-color': barBackgraoundColor}">
+   <li *ngFor="let item of items; let i = index">
+      <a [ngStyle]="{'color': selectedIndex === i ? fontActiveColor : fontColor}"
+         (click)="handleSelect(i)"> {{item.title}}
+      </a>
+      <span class="indicator" *ngIf="i === selectedIndex"
+            [ngStyle]="{'background': indicatorColor}"></span>
+   </li>
+</ul>
+
