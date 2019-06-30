@@ -5,25 +5,25 @@ import { HomeGrandComponent, HomeDetailComponent } from "./components";
 
 const routes: Routes = [
     {
-      path: "",
-      redirectTo: "hot",
-      pathMatch: "full"
-    },
-    {
-      path: ":tabLink",
-      component: HomeDetailComponent,
+      path: "home",
+      component: HomeContainerComponent,
       children: [
-         {
-           path: "grand",
-           component: HomeGrandComponent
-         }
-      ]
-    }
-    // {
-    //   path: "**",
-    //   component: PageNotFoundComponent
-    // }
-];
+        {
+          path: "",
+          redirectTo: "hot",
+          pathMatch: "full"
+        },
+        {
+          path: ":tabLink",
+          component: HomeDetailComponent,
+          children: [
+             {
+               path: "grand",
+               component: HomeGrandComponent
+             }
+          ]
+        }]
+    }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
