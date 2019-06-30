@@ -9,23 +9,6 @@ const routes: Routes = [
       redirectTo: "home",
       pathMatch: "full"
     }
-    // { path: "home",
-    //   component: HomeContainerComponent
-    // }
-      // children: [
-      //   {
-      //       path: "",
-      //       redirectTo: "hot",
-      //       pathMatch: "full"
-      //   },
-      //   {
-      //     path: "hot",
-      //     component: HomeDetailComponent
-        // }
-        // {
-        //     path: ":tabLink",
-        //     component: HomeDetailComponent
-        // }
       ];
 
 @NgModule({
