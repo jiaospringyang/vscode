@@ -11,5 +11,8 @@
 <ng-template #other>
     <h1>other works</h1>
 </ng-template>
-<a [routerLink]="['grand']">redirect to grand</a>
+<a [routerLink]="['grand']" routerLinkActive="active" [queryParams]="{'name': 'zhangsan'}">redirect to grand</a>
+<a [routerLink]="[{outlets: {'second': 'aux'}}]">redirect to second aux</a>
 <router-outlet></router-outlet>
+<router-outlet name="second"></router-outlet>
+

@@ -1,32 +1,43 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeContainerComponent } from ".";
-import { HomeGrandComponent, HomeDetailComponent } from "./components";
+import {
+  HomeGrandComponent,
+  HomeDetailComponent,
+  AuxComponent
+} from "./components";
 
 const routes: Routes = [
-    {
-      path: "home",
-      component: HomeContainerComponent,
-      children: [
-        {
-          path: "",
-          redirectTo: "hot",
-          pathMatch: "full"
-        },
-        {
-          path: ":tabLink",
-          component: HomeDetailComponent,
-          children: [
-             {
-               path: "grand",
-               component: HomeGrandComponent
-             }
-          ]
-        }]
-    }];
+  {
+    path: "home",
+    component: HomeContainerComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: "hot",
+        pathMatch: "full"
+      },
+      {
+        path: ":tabLink",
+        component: HomeDetailComponent,
+        children: [
+          {
+            path: "aux",
+            component: AuxComponent,
+            outlet: "second"
+          },
+          {
+            path: "grand",
+            component: HomeGrandComponent
+          }
+        ]
+      }
+    ]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
