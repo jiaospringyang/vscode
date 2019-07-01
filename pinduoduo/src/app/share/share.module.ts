@@ -3,7 +3,8 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent } from "./components";
 import { GridItemDirective } from "./directive/grid-item.directive";
-import { GridItemImageDirective, GridItemTitleDirective } from './directive';
+import { GridItemImageDirective, GridItemTitleDirective } from "./directive";
+import { AppAgoPipe } from "./pipes";
 
 @NgModule({
    declarations: [
@@ -12,7 +13,8 @@ import { GridItemImageDirective, GridItemTitleDirective } from './directive';
       HorizontalGridComponent,
       GridItemDirective,
       GridItemImageDirective,
-      GridItemTitleDirective
+      GridItemTitleDirective,
+      AppAgoPipe
    ],
    imports: [
       CommonModule,
@@ -26,7 +28,8 @@ import { GridItemImageDirective, GridItemTitleDirective } from './directive';
       HorizontalGridComponent,
       GridItemDirective,
       GridItemImageDirective,
-      GridItemTitleDirective
+      GridItemTitleDirective,
+      AppAgoPipe
    ]
 })
 export class ShareModule { }

@@ -1,157 +1,35 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { ImageSlider } from "src/app/share/components";
-import { Router, ActivatedRoute } from "@angular/router";
-
-interface GridItem {
-  id: number;
-  icon: string;
-  link: string;
-  title: string;
-}
+import { ActivatedRoute } from "@angular/router";
+import { HomeService } from "../../home.service";
+import { token } from "src/app/share/components";
 
 @Component({
   selector: "app-home-detail",
   templateUrl: "./home-detail.component.html",
-  styleUrls: ["./home-detail.component.css"]
+  styleUrls: ["./home-detail.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeDetailComponent implements OnInit {
   tabLink = "hot";
-  grids: GridItem[] = [
-    {
-      id: 1,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/girlclothes.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 2,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/food.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 3,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/shoes.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 4,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/home.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 5,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 6,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 7,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 8,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 1,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/girlclothes.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 2,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/food.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 3,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/shoes.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 4,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/home.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 5,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 6,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 7,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    },
-    {
-      id: 8,
-      icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-      link: "#",
-      title: "商品xx促销"
-    }
-  ];
+  grids = [];
 
-  imageSliders: ImageSlider[] = [{
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/girlclothes.jpg",
-    caption: ""
-  },
-  {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/food.jpg",
-    caption: ""
-  },
-  {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/shoes.jpg",
-    caption: ""
-  },
-  {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/home.jpg",
-    caption: ""
-  },
-  {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-    caption: ""
-  }];
+  imageSliders: ImageSlider[] = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private homeService: HomeService,
+              @Inject(token) private baseUrl: string, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-       console.log("路径", params);
        this.tabLink = params.get("tabLink");
+       this.cdr.markForCheck();
     });
     this.route.queryParamMap.subscribe((params) => {
-      console.log("查询", params);
+     // console.log("查询", params);
    });
+
+    this.grids = this.homeService.getGrids();
+    this.imageSliders = this.homeService.getImageSlides();
+    console.log("baseUrl", this.baseUrl);
   }
-
-
 }

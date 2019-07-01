@@ -4,7 +4,8 @@ import { HomeContainerComponent } from ".";
 import {
   HomeGrandComponent,
   HomeDetailComponent,
-  AuxComponent
+  AuxComponent,
+  ParentComponent
 } from "./components";
 
 const routes: Routes = [

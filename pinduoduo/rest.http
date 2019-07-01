@@ -1,0 +1,9 @@
+@baseUrl = "http://www.baidu.com";
+
+GET {{baseUrl}}
+
+###
+POST {{baseUrl}} HTTP/1.1
+header name: header value
+
+content

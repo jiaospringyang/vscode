@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { ChangeDetectionStrategy } from "@angular/compiler/src/core";
 
 @Component({
   selector: "app-scrollable-tab",
