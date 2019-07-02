@@ -1,8 +1,8 @@
-<div *ngIf="tabLink === 'hot' else other">
-    <app-image-slider [imageSliders]="imageSliders" [sliderHeight]="'160px'">
+<div *ngIf="(selectedLinkTab$ | async) === 'hot' else other">
+    <app-image-slider [imageSliders]="(imageSliders$ | async)" [sliderHeight]="'160px'">
     </app-image-slider>
     <app-horizontal-grid>
-        <div appGridItem [display]="'grid'" [place]="'center'" *ngFor="let grid of grids">
+        <div appGridItem [display]="'grid'" [place]="'center'" *ngFor="let grid of (grids$ | async)">
             <img appGridItemImage [src]="grid.icon" [alt]="grid.link">
             <span appGridItemTitle>{{grid.title}}</span>
         </div>
@@ -11,8 +11,8 @@
 <ng-template #other>
     <h1>other works</h1>
 </ng-template>
-<a [routerLink]="['grand']" routerLinkActive="active" >redirect to grand</a>
-<!-- [queryParams]="{'name': 'zhangsan'}" -->
+<!-- <a [routerLink]="['grand']" routerLinkActive="active" >redirect to grand</a>
+        [queryParams]="{'name': 'zhangsan'}"
 <a [routerLink]="[{outlets: {'second': 'aux'}}]">redirect to second aux</a>
 <router-outlet></router-outlet>
-<router-outlet name="second"></router-outlet>
+<router-outlet name="second"></router-outlet> -->

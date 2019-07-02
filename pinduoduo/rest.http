@@ -1,9 +1,14 @@
-@baseUrl = "http://www.baidu.com";
+# hot scroll image
+###
+GET {{host}}/banners?icode={{iCode}} HTTP/1.1
 
-GET {{baseUrl}}
+# scroll tab
+###
+GET {{host}}/tabs?icode={{iCode}} HTTP/1.1
+
+# slide image
+###
+GET {{host}}/channels?icode={{iCode}} HTTP/1.1
 
 ###
-POST {{baseUrl}} HTTP/1.1
-header name: header value
-
-content
+GET {{host}}/tab-menu?icode={{iCode}} HTTP/1.1

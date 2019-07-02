@@ -1,0 +1,8 @@
+<app-horizontal-grid [displayCol]="displayCols" [cols]="cols">
+  <div appGridItem [display]="'grid'" [place]="'center'"
+       *ngFor="let tab of menuTabs; let idx = index;">
+    <img appGridItemImage [src]="selectedId === idx ? tab.activeIcon : tab.icon"
+         [alt]="tab.link" (click)="toggleMenu(idx)">
+    <!-- <span appGridItemTitle>{{tab.title}}></span> -->
+  </div>
+</app-horizontal-grid>

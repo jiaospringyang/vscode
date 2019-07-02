@@ -12,9 +12,10 @@ import {
 } from "@angular/core";
 
 export interface ImageSlider {
-  imageURL: string;
+  id: number;
+  imgUrl: string;
   caption: string;
-  imageLink: string;
+  link: string;
 }
 
 @Component({

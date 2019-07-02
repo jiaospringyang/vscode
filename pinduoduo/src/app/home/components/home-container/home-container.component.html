@@ -1,6 +1,6 @@
-<app-scrollable-tab [items]="items" [barBackgraoundColor]="barBackgraoundColor"
+<app-scrollable-tab [items]="(items$ | async)" [barBackgraoundColor]="barBackgraoundColor"
                     [fontColor]="'black'" [fontActiveColor]="'green'"
                     [indicatorColor]="'red'" (tabSelectedIndex)="handleTabItem($event)">
 </app-scrollable-tab>
 <router-outlet></router-outlet>
-
+<!-- <app-count-down></app-count-down> -->

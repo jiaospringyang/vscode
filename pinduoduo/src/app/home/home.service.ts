@@ -1,148 +1,36 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { ImageSlider } from "../share/components";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment.prod";
+import { TopMenu } from './components/home-container';
 
-interface GridItem {
-    id: number;
-    icon: string;
-    link: string;
-    title: string;
-  }
+export interface GridItem {
+  id: number;
+  icon: string;
+  link: string;
+  title: string;
+}
 
 @Injectable()
 export class HomeService {
-    constructor() {
-    }
+  constructor(private http: HttpClient) {}
 
-    private grids: GridItem[] = [
-        {
-          id: 1,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/girlclothes.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 2,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/food.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 3,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/shoes.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 4,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/home.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 5,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 6,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 7,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 8,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 1,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/girlclothes.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 2,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/food.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 3,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/shoes.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 4,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/home.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 5,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 6,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 7,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        },
-        {
-          id: 8,
-          icon: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-          link: "#",
-          title: "商品xx促销"
-        }
-      ];
+  getGrids(): Observable<any> {
+    return this.http.get<GridItem[]>(`${environment.host}/channels`, {
+      params: { icode: `${environment.icode}` }
+    });
+  }
 
-    private imageSliders: ImageSlider[] = [{
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/girlclothes.jpg",
-    caption: ""
-    },
-    {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/food.jpg",
-    caption: ""
-    },
-    {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/shoes.jpg",
-    caption: ""
-    },
-    {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/home.jpg",
-    caption: ""
-    },
-    {
-    imageLink: "#",
-    imageURL: "https://cdn.pinduoduo.com/home/static/img/subject/sports.jpg",
-    caption: ""
-    }];
+  getImageSlides(): Observable<ImageSlider[]> {
+    return this.http.get<ImageSlider[]>(`${environment.host}/banners`, {
+      params: { icode: `${environment.icode}` }
+    });
+  }
 
-    getGrids(): GridItem[] {
-        return this.grids;
-    }
-
-    getImageSlides(): ImageSlider[] {
-        return this.imageSliders;
-    }
+  getTabs(): Observable<TopMenu[]> {
+    return this.http.get<TopMenu[]>(`${environment.host}/tabs`, {
+        params: { icode: `${environment.icode}` }
+      });
+  }
 }

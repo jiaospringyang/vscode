@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  host: "http://apis.imooc.com/api",
+  icode: "D26B2DC3535F71A6"
 };
 
 /*

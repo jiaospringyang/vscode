@@ -2,7 +2,7 @@
   <div class="image-slider" #imageSlider [style.height]="sliderHeight"
        (scroll)="handleScroll($event)">
     <img #imgs *ngFor="let image of imageSliders"
-         [src]="image.imageURL" [alt]="image.caption">
+         [src]="image.imgUrl" [alt]="image.link">
   </div>
   <div class="nav-section">
       <span class="slide-buttons" *ngFor="let button of imageSliders; let idx = index"
