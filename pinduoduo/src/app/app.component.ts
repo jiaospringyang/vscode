@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FootMenu } from "./share/components";
 import { Observable } from "rxjs";
 import { Router, NavigationEnd } from "@angular/router";
@@ -9,7 +9,7 @@ import { filter, map } from "rxjs/operators";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   selectedIndex$: Observable<number>;
 
   constructor(private router: Router) {}
@@ -21,7 +21,7 @@ export class AppComponent {
       filter((event) => event instanceof NavigationEnd),
       map((evt: NavigationEnd) => {
         const path = evt.url.split("/");
-        return path.length === 0 ? "home" : path[0];
+        return path.length === 0 ? "home" : path[1];
       }),
       map((path) => this.getPathIndex(path))
     );
@@ -32,9 +32,9 @@ export class AppComponent {
   }
 
   private getPathIndex(path: string) {
-    return path === "category"
+    return path === "recommend"
       ? 1
-      : path === "recommend"
+      : path === "category"
       ? 2
       : path === "chat"
       ? 3

@@ -1,0 +1,16 @@
+<div class="container">
+    <img class="product-image" [src]="product.imageUrl" />
+    <div class="product-title">{{product.title}}</div>
+    <div class="product-tags">
+      <span *ngFor="let tag of product.tags" appProductTag>{{tag}}</span>
+    </div>
+    <div class="product-price">
+      <span class="price-section">
+        {{product.price | currency: "CNY"}}
+      </span>
+      <span class="price-des">{{product.priceDesc}}</span>
+      <span class="price-more">
+        更多
+      </span>
+    </div>
+  </div>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { Product } from "src/app/share/components";
+import { filter, map, switchMap } from "rxjs/operators";
+import { ActivatedRoute } from "@angular/router";
+import { HomeService } from "src/app/home/home.service";
 
 @Component({
   selector: "app-recommend-container",
@@ -6,10 +11,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./recommend-container.component.css"]
 })
 export class RecommendContainerComponent implements OnInit {
-
-  constructor() { }
+  products$: Observable<Product[]>;
+  constructor(
+    private homeService: HomeService
+  ) {}
 
   ngOnInit() {
+    this.products$ = this.homeService.getProducts();
   }
-
 }

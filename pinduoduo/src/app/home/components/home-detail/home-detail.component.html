@@ -14,7 +14,6 @@
     <img [src]="ad.imageUrl" [alt]="ad.link" class="ads-image">
 </div>
 <app-vertical-grid [itemWidth]="'20rem'">
-    <div class="product" *ngFor="let product of products$ | async">
-        <app-product-card [product]="product"></app-product-card>
-    </div>
+    <app-product-card class="product" *ngFor="let product of products$ | async" [product]="product"
+        [routerLink]="['/products', product.id]"></app-product-card>
 </app-vertical-grid>

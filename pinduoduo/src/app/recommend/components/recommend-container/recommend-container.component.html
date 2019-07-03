@@ -1,3 +1,4 @@
-<p>
-  recommend-container works!
-</p>
+<app-vertical-grid [itemWidth]="'10rem'" class="recommend-container">
+    <app-product-tile class="product" *ngFor="let product of products$ | async" [product]="product"
+        [routerLink]="['/products', product.id]"></app-product-tile>
+</app-vertical-grid>
