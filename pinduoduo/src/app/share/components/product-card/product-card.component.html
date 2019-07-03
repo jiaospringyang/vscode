@@ -1,0 +1,19 @@
+<div class="container">
+  <img class="product-image" [src]="product.imageUrl" />
+  <div class="product-title">{{product.title}}</div>
+  <div class="product-tags">
+    <span *ngFor="let tag of product.tags" appProductTag>{{tag}}</span>
+  </div>
+  <div class="product-price">
+    <span class="price-section">
+      <p>&yen;</p>
+      <h3 class="price">{{product.price}}</h3>
+    </span>
+    <span class="price-des">{{product.priceDesc}}</span>
+    <span class="price-avatar">
+      <img [src]="avatar" appPriceAvatar 
+         *ngFor="let avatar of product.buyerAvatars; let idx = index;"
+         [ngStyle]="{'left': -idx * 10 + 'px', 'z-index': 1000-idx}"/>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+:host {
+  padding: 0 0.5rem;
+  background-color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: "3rem . 1rem 1rem";
+  grid-gap: 5px;
+  grid-template-areas: "image title" "image ." "image tags" "image price";
+  place-content: stretch;
+  place-items: stretch;
+}
+
+.product-image {
+  grid-area: image;
+  object-fit: contain;
+  width: 9rem;
+  height: 9rem;
+}
+.product-title {
+  grid-area: title;
+}
+.product-tags {
+  grid-area: tags;
+}
+.product-price {
+  grid-area: price;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-areas: "price-section price-des price-avatar";
+  place-content: stretch;
+  place-items: center;
+}
+
+.price-section {
+  grid-area: price-section;
+  color: #d24749;
+  margin: 0 1rem;
+}
+
+.price-des {
+  grid-area: price-des;
+  color: #3f3f3f;
+  font-size: 0.8rem;
+}
+
+.price-avatar {
+  grid-area: price-avatar;
+  margin: 0;
+}
+
+.price-section p {
+  display: inline;
+}
+
+.price {
+  display: inline;
+  font-size: 1.3rem;
+  padding: 0;
+}
+
+.price-avatar >img {
+  position: relative;
+}

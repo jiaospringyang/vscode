@@ -12,3 +12,6 @@ GET {{host}}/channels?icode={{iCode}} HTTP/1.1
 
 ###
 GET {{host}}/tab-menu?icode={{iCode}} HTTP/1.1
+
+###
+GET {{host}}/ads?categories_like=men&icode={{iCode}} HTTP/1.1

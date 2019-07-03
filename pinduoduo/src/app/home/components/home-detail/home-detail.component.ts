@@ -5,12 +5,12 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef
 } from "@angular/core";
-import { ImageSlider } from "src/app/share/components";
+import { ImageSlider, Ads, Product } from "src/app/share/components";
 import { ActivatedRoute } from "@angular/router";
 import { HomeService, GridItem } from "../../home.service";
 import { token } from "src/app/share/components";
 import { Observable } from "rxjs";
-import { filter, map } from "rxjs/operators";
+import { filter, map, switchMap } from "rxjs/operators";
 
 @Component({
   selector: "app-home-detail",
@@ -23,6 +23,8 @@ export class HomeDetailComponent implements OnInit {
   grids$: Observable<GridItem[]>;
   selectedLinkTab$: Observable<string>;
   imageSliders$: Observable<ImageSlider[]>;
+  ad$: Observable<Ads>;
+  products$: Observable<Product[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,8 +34,7 @@ export class HomeDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.selectedLinkTab$ = this.route.paramMap
-    .pipe(
+    this.selectedLinkTab$ = this.route.paramMap.pipe(
       filter((params) => params.has("tabLink")),
       map((params) => params.get("tabLink"))
     );
@@ -56,5 +57,14 @@ export class HomeDetailComponent implements OnInit {
     //   this.imageSliders = imageSliders;
     //   this.cdr.markForCheck();
     // });
+    this.ad$ = this.selectedLinkTab$.pipe(
+      switchMap((tab) => this.homeService.getAds(tab)),
+      filter((ads) => ads.length > 0),
+      map((ads) => ads[0])
+    );
+
+    this.products$ = this.selectedLinkTab$.pipe(
+      switchMap((tab) => this.homeService.getProducts(tab))
+    );
   }
 }

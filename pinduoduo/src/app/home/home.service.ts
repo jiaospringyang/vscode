@@ -1,9 +1,9 @@
 import { Injectable, OnInit } from "@angular/core";
-import { ImageSlider } from "../share/components";
+import { ImageSlider, Ads, Product } from "../share/components";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment.prod";
-import { TopMenu } from './components/home-container';
+import { TopMenu } from "./components/home-container";
 
 export interface GridItem {
   id: number;
@@ -32,5 +32,21 @@ export class HomeService {
     return this.http.get<TopMenu[]>(`${environment.host}/tabs`, {
         params: { icode: `${environment.icode}` }
       });
+  }
+
+  getAds(tab: string): Observable<Ads[]> {
+    return this.http.get<Ads[]>(`${environment.host}/ads`, {
+      params: { categories_like: tab,
+                icode: `${environment.icode}`
+              }
+    });
+  }
+
+  getProducts(tab: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.host}/products`, {
+      params: { categories_like: tab,
+                icode: `${environment.icode}`
+              }
+    });
   }
 }

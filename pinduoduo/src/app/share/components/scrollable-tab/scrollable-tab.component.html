@@ -3,7 +3,7 @@
       <a [ngStyle]="{'color': selectedIndex === i ? fontActiveColor : fontColor}"
          (click)="handleSelect(i)"> {{item.title}}
       </a>
-      <span class="indicator" *ngIf="i === selectedIndex"
+      <span class="indicator" *ngIf="selectedTabLink === item.link"
             [ngStyle]="{'background': indicatorColor}"></span>
    </li>
 </ul>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { HomeService } from "../../home.service";
 import { Observable } from "rxjs";
+import { filter, map } from "rxjs/operators";
 
 export interface TopMenu {
   id: number;
@@ -17,11 +18,16 @@ export interface TopMenu {
 export class HomeContainerComponent implements OnInit {
   barBackgraoundColor = "#fff";
   items$: Observable<TopMenu[]>;
+  selectedTabLink$: Observable<string>;
 
-  constructor(private router: Router, private homeService: HomeService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private homeService: HomeService) {}
 
   ngOnInit(): void {
     this.items$ = this.homeService.getTabs();
+    this.selectedTabLink$ = this.route.firstChild.paramMap.pipe(
+      filter((params) => params.has("tabLink")),
+      map((params) => params.get("tabLink"))
+    );
   }
 
   handleTabItem(selectTab: TopMenu) {

@@ -1,18 +1,20 @@
-<div *ngIf="(selectedLinkTab$ | async) === 'hot' else other">
-    <app-image-slider [imageSliders]="(imageSliders$ | async)" [sliderHeight]="'160px'">
-    </app-image-slider>
-    <app-horizontal-grid>
-        <div appGridItem [display]="'grid'" [place]="'center'" *ngFor="let grid of (grids$ | async)">
-            <img appGridItemImage [src]="grid.icon" [alt]="grid.link">
-            <span appGridItemTitle>{{grid.title}}</span>
-        </div>
-    </app-horizontal-grid>
+<ng-container *ngIf="(selectedLinkTab$ | async) as selectedTab">
+    <ng-container *ngIf="selectedTab === 'hot'">
+        <app-image-slider [imageSliders]="(imageSliders$ | async)" [sliderHeight]="'160px'">
+        </app-image-slider>
+        <app-horizontal-grid>
+            <div appGridItem [display]="'grid'" [place]="'center'" *ngFor="let grid of (grids$ | async)">
+                <img appGridItemImage [src]="grid.icon" [alt]="grid.link">
+                <span appGridItemTitle>{{grid.title}}</span>
+            </div>
+        </app-horizontal-grid>
+    </ng-container>
+</ng-container>
+<div class="ads-container" *ngIf="ad$ | async as ad">
+    <img [src]="ad.imageUrl" [alt]="ad.link" class="ads-image">
 </div>
-<ng-template #other>
-    <h1>other works</h1>
-</ng-template>
-<!-- <a [routerLink]="['grand']" routerLinkActive="active" >redirect to grand</a>
-        [queryParams]="{'name': 'zhangsan'}"
-<a [routerLink]="[{outlets: {'second': 'aux'}}]">redirect to second aux</a>
-<router-outlet></router-outlet>
-<router-outlet name="second"></router-outlet> -->
+<app-vertical-grid [itemWidth]="'20rem'">
+    <div class="product" *ngFor="let product of products$ | async">
+        <app-product-card [product]="product"></app-product-card>
+    </div>
+</app-vertical-grid>
