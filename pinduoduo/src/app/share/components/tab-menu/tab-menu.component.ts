@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { FootMenu } from "..";
 
 @Component({
@@ -7,15 +7,16 @@ import { FootMenu } from "..";
   styleUrls: ["./tab-menu.component.css"]
 })
 export class TabMenuComponent implements OnInit {
-  selectedId = 0;
+  @Input() selectedId = 0;
+  @Output() selectTabMenu = new EventEmitter<FootMenu>();
   displayCols = 5;
   cols = 5;
   menuTabs: FootMenu[] = [
     {
-      icon: "/assets/tabs/category.png",
-      activeIcon: "/assets/tabs/category_selected.png",
-      title: "搜索",
-      link: "category"
+      icon: "/assets/tabs/home.png",
+      activeIcon: "/assets/tabs/home_selected.png",
+      title: "主页",
+      link: "home"
     },
     {
       icon: "/assets/tabs/recommend.png",
@@ -24,10 +25,10 @@ export class TabMenuComponent implements OnInit {
       link: "recommend"
     },
     {
-      icon: "/assets/tabs/home.png",
-      activeIcon: "/assets/tabs/home_selected.png",
-      title: "主页",
-      link: "home"
+      icon: "/assets/tabs/category.png",
+      activeIcon: "/assets/tabs/category_selected.png",
+      title: "搜索",
+      link: "category"
     },
     {
       icon: "/assets/tabs/chat.png",
@@ -42,8 +43,6 @@ export class TabMenuComponent implements OnInit {
       link: "my"
     }
   ];
-
-  @Output() selectTabMenu = new EventEmitter<FootMenu>();
   constructor() {}
 
   ngOnInit() {}

@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "src/environments/environment.prod";
 import { HomeService } from "../../home.service";
 import { Observable } from "rxjs";
 
