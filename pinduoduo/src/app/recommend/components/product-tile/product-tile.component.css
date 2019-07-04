@@ -10,7 +10,6 @@
   grid-gap: 5px;
   place-content: stretch;
   place-items: stretch;
-  position: relative;
 }
 
 .product-image {
@@ -26,30 +25,25 @@
 }
 
 .product-price {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 3px;
   place-content: stretch;
   place-items: center;
-  font-size: 1rem;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
 }
 
 .price-section {
-  grid-area: price-section;
   color: #d24749;
 }
 
 .price-des {
-  grid-area: price-des;
   color: #3f3f3f;
   font-size: 0.8rem;
 }
 
 .price-more {
-  right: 1px;
   font-size: 0.8rem;
   height: 100%;
   line-height: center;
   font-weight: bold;
-  position: absolute;
 }
