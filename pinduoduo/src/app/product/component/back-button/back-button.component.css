@@ -1,0 +1,14 @@
+.back-button {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 0.8rem;
+}
+
+.back-button img {
+    width: 1.6rem;
+}
+
+.background-image {
+    background-color: #000;
+    opacity: 0.6;
+}

@@ -4,3 +4,10 @@
     align-items: stretch;
     flex: 1;
 }
+
+app-back-button {
+    position: fixed;
+    left: 1rem;
+    top: 1.6rem;
+    z-index: 2000;
+}

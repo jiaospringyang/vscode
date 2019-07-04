@@ -11,7 +11,10 @@ GET {{host}}/tabs?icode={{iCode}} HTTP/1.1
 GET {{host}}/channels?icode={{iCode}} HTTP/1.1
 
 ###
-GET {{host}}/tab-menu?icode={{iCode}} HTTP/1.1
+GET {{host}}/tabMenu?icode={{iCode}} HTTP/1.1
 
 ###
-GET {{host}}/ads?categories_like=men&icode={{iCode}} HTTP/1.1
+GET {{host}}/ads?categories_like=fruit&icode={{iCode}} HTTP/1.1
+
+###
+GET {{host}}/products?categories_like=fruit&icode={{iCode}} HTTP/1.1
