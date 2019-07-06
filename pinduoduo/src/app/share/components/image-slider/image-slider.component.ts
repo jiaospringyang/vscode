@@ -27,6 +27,7 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() imageSliders: ImageSlider[] = [];
   @Input() sliderHeight = "160px";
   @Input() playImageTime = 2;
+  @Input() intervalBySeconds = 1000;
   @ViewChild("imageSlider", {static: true}) imageSlider: ElementRef;
   @ViewChildren("imgs") imgs: QueryList<ElementRef>;
   currentIndex = 0;
@@ -45,7 +46,7 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     setInterval(() => { // scrollLeft是一个属性, scrollLeft = index * 总宽度 / 图片数
       this.intervalId = this.rd2.setProperty(this.imageSlider.nativeElement, "scrollLeft",
          this.getIndex(++this.currentIndex) * this.imageSlider.nativeElement.scrollWidth / this.imgs.length);
-    }, this.playImageTime * 1000);
+    }, this.playImageTime * this.intervalBySeconds);
   }
 
   ngOnDestroy(): void {

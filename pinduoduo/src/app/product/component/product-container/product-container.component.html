@@ -1,1 +1,6 @@
 <app-back-button></app-back-button>
+<ng-container *ngIf="variants$ | async as productVariants">
+    <app-image-slider  [imageSliders]="(productVariants.productVariantsImage)" [sliderHeight]="'22rem'"
+                       [intervalBySeconds]="0"
+    ></app-image-slider>
+</ng-container>

@@ -12,7 +12,9 @@ export interface GridItem {
   title: string;
 }
 
-@Injectable()
+@Injectable({
+   providedIn: "root"
+})
 export class HomeService {
   constructor(private http: HttpClient) {}
 
