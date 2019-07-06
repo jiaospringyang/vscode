@@ -1,0 +1,17 @@
+<app-horizontal-grid [displayCol]="'8'" [cols]="'8'" [girdTitle]="'true'">
+  <div appGridItem [display]="'grid'" [place]="'center'" *ngFor="let tab of productMenuTabs; let idx = index;">
+    <img appGridItemImage [src]="selectedId === idx ? tab.activeIcon : tab.icon" [alt]="tab.link" [width]="'2rem'"
+      [height]="'2rem'" (click)="toggleProductMenu(idx)">
+    <span appGridItemTitle>{{tab.title}}></span>
+  </div>
+</app-horizontal-grid>
+<div class="button-group">
+  <span class="button-one">
+    <div>{{ nowPrice | currency: "CNY"}}</div>
+    <div>直接购买</div>
+  </span>
+  <span class="button-two">
+    <div>{{ priceList | currency: "CNY"}}</div>
+    <div>发起拼单</div>
+  </span>
+</div>

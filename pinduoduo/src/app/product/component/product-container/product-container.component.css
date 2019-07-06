@@ -1,4 +1,11 @@
 :host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+
+.product-container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -6,52 +13,54 @@
 }
 
 app-back-button {
-    position: fixed;
-    left: 1rem;
-    top: 1.6rem;
-    z-index: 2000;
+  position: fixed;
+  left: 1rem;
+  top: 1.6rem;
+  z-index: 2000;
 }
 
 .price-section {
-    display: grid;
-    grid-template-columns: 25% 25% 1fr;
-    place-content: start;
-    place-items: baseline;
+  display: grid;
+  grid-template-columns: 25% 25% 1fr;
+  place-content: start;
+  place-items: baseline;
 }
 
-.title, .coupon, .guarantee {
-    grid-column: 1/4;
+.title,
+.coupon,
+.guarantee {
+  grid-column: 1/4;
 }
 
 .price-section .now-price {
-    color: red;
-    font-weight: 600;
-    font-size: 1.5rem;
+  color: red;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .price-section .price-list {
-    color: #3f3f3f;
-    text-decoration: line-through;
+  color: #3f3f3f;
+  text-decoration: line-through;
 }
 
 .price-section .price-count {
-    justify-self: end;
+  justify-self: end;
 }
 
 .price-section .title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 3px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 3px 0;
 }
 
 .price-section .guarantee {
-    font-weight: 1.1rem;
-    color: darkgray;
-    margin: 3px 0;
+  font-weight: 1.1rem;
+  color: darkgray;
+  margin: 3px 0;
 }
 
-.short-list {
-    width: 100%;
-    padding: 0.4rem 0;
-    background-color: #f5f5f5;
+app-product-short-list {
+  width: 100%;
+  padding: 0.4rem 0;
+  background-color: #f5f5f5;
 }

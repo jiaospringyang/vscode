@@ -10,6 +10,7 @@ export class HorizontalGridComponent implements OnInit {
   // @Emoji() emotion = "hello";
   @Input() displayCol = 5;
   @Input() cols = 8;
+  @Input() girdTitle = false;
   sliderMargin = "0";
 
 

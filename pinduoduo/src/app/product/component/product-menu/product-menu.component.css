@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  place-content: flex-end;
+  font-size: 1.2rem;
+  width: 60%;
+}
+
+.button-one {
+  background: rgba(255, 0, 0, 0.493);
+}
+
+.button-two {
+  background: red;
+}
+
+.button-one,
+.button-two {
+  color: white;
+  width: 50%;
+  text-align: center;
+}
+
+app-horizontal-grid {
+  width: 40%;
+}
