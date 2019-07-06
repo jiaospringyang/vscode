@@ -1,0 +1,9 @@
+<div class="container">
+  <img appPriceAvatar [avatarSize]="'2rem'" [src]="productItem.avatar" >
+  <div class="user-name"> {{ productItem.startBy }}</div>
+  <div> 
+    还差<span class="remain-number">{{ productItem.remainingNumber}}人</span>拼成
+    <app-count-down class="count-down" [startDate]="startDate" [futureDate]="futureDate"></app-count-down>
+  </div>
+  <div type="button" class="group-button">去拼单</div>
+</div>

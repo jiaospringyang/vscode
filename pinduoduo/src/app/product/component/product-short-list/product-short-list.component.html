@@ -1,0 +1,7 @@
+<div>
+   <div class="join-info">
+      <span>{{productList.length}}人在拼单，可直接参与</span>
+      <img src="assets/icons/navigate_next.png" alt="">
+   </div>
+   <app-product-item *ngFor="let product of productList" [productItem]="product"></app-product-item>
+</div>

@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.join-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.5rem 0 1rem;
+    color: #3f3f3f;
+    align-items: center;
+}
+
+.join-info img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.join-pin {
+    width: 1.6rem;
+}

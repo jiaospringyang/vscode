@@ -16,7 +16,9 @@ export class OrderService {
         return this.http.get<ProductVariant[]>(`${environment.host}/productVariants`,
         {params: {
             _expand: "product",
-            _embed: "productVariant"
+            _embed: "productVariantImages",
+            productId,
+            icode: `${environment.icode}`
         }});
     }
 }

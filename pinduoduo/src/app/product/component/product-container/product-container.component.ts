@@ -13,6 +13,7 @@ import { map, filter, switchMap } from "rxjs/operators";
 })
 export class ProductContainerComponent implements OnInit {
   variants$: Observable<ProductVariant[]>;
+  selectedIndex = 0;
 
   constructor(
     private route: ActivatedRoute,

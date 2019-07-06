@@ -9,3 +9,11 @@ export interface ProductVariant {
    product: Product;
 }
 
+export interface GroupOrder {
+   id: number;
+   productId: number;
+   startBy: string;
+   avatar: string;
+   startAt: Date;
+   remainingNumber: number;
+}

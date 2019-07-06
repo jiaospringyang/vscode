@@ -43,6 +43,10 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     //   this.rd2.setStyle(img.nativeElement, "height", this.sliderHeight);
     // });
 
+    if (this.intervalBySeconds <= 0) {
+      return;
+    }
+
     setInterval(() => { // scrollLeft是一个属性, scrollLeft = index * 总宽度 / 图片数
       this.intervalId = this.rd2.setProperty(this.imageSlider.nativeElement, "scrollLeft",
          this.getIndex(++this.currentIndex) * this.imageSlider.nativeElement.scrollWidth / this.imgs.length);

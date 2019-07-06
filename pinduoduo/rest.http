@@ -20,4 +20,4 @@ GET {{host}}/ads?categories_like=fruit&icode={{iCode}} HTTP/1.1
 GET {{host}}/products?categories_like=fruit&icode={{iCode}} HTTP/1.1
 
 ###
-GET {{host}}/productVariants?_expand=product&_embed=productVariants HTTP/1.1
+GET {{host}}/productVariants?_expand=product&_embed=productVariantImages&productId=1&icode={{iCode}} HTTP/1.1
