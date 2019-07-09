@@ -19,8 +19,8 @@ export class ConfirmOrderComponent implements OnInit {
 
   ngOnInit() {
     this.data$ = this.dialogService.getData().pipe(
-      tap((data) => console.log("data", data)),
-      share()
+      // tap((data) => console.log("data", data)),
+      // share()
     );
     const unitPrice$: Observable<number> = this.data$.pipe(
       map(
