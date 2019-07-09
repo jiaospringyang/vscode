@@ -13,7 +13,7 @@ import { token } from "../share/components";
     HomeDetailComponent,
     HomeGrandComponent,
     AuxComponent,
-    ParentComponent,
+    ParentComponent
   ],
   providers: [HomeService,
   {

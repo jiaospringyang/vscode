@@ -1,0 +1,17 @@
+<div class="payment">
+  <div class="item-row" (click)="handleClick(1)">
+    <img src="assets/icons/wechat_pay.png" alt="">
+    <div>微信支付（50元以内可免密支付）</div>
+    <img class="selected-image" src="assets/icons/selected.png" alt="" [ngClass]="{'hidden': selectedIndex === 2 || selectedIndex == 3}">
+  </div>
+  <div class="item-row" (click)="handleClick(2)">
+    <img src="assets/icons/alipay.png" alt="">
+    <div>支付宝</div>
+    <img class="selected-image" src="assets/icons/selected.png" alt="" [ngClass]="{'hidden': selectedIndex === 1 || selectedIndex == 3}">
+  </div>
+  <div class="item-row" (click)="handleClick(3)">
+    <img src="assets/icons/friends.png" alt="">
+    <div>找微信好友支付</div>
+    <img class="selected-image" src="assets/icons/selected.png" alt="" [ngClass]="{'hidden': selectedIndex === 2 || selectedIndex == 1}">
+  </div>
+</div>

@@ -38,5 +38,5 @@
     </ng-container>
 </div>
 <ng-container *ngIf="variants$ | async as productVariants">
-        <app-product-menu [nowPrice]="productVariants[selectedIndex].price" [priceList]="productVariants[selectedIndex].listPrice"></app-product-menu>
+    <app-product-menu [productVariants]="productVariants" [selectedIndex]="selectedIndex"></app-product-menu>
 </ng-container>

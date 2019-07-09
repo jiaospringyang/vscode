@@ -7,7 +7,11 @@ import {
   BackButtonComponent,
   ProductItemComponent,
   ProductShortListComponent,
-  ProductMenuComponent
+  ProductMenuComponent,
+  ConfirmOrderComponent,
+  ProductVariantComponent,
+  ProductAmountComponent,
+  PaymentComponent,
 } from "./component";
 
 @NgModule({
@@ -16,8 +20,15 @@ import {
     BackButtonComponent,
     ProductItemComponent,
     ProductShortListComponent,
-    ProductMenuComponent
+    ProductMenuComponent,
+    ConfirmOrderComponent,
+    ProductVariantComponent,
+    ProductAmountComponent,
+    PaymentComponent
   ],
-  imports: [ShareModule, ProductRoutingModule]
+  imports: [ShareModule, ProductRoutingModule],
+  entryComponents: [
+    ProductVariantComponent
+  ]
 })
 export class ProductModule {}

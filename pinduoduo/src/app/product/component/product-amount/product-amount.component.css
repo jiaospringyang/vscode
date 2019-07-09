@@ -1,0 +1,9 @@
+.button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: lightgray;
+}
+
+.count {
+  margin: 10px;
+}

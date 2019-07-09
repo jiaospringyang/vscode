@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { ShareModule } from "./share/share.module";
 import { AppRoutingModule } from "./app-routing.module";
-import { HomeModule, ParamsInterceptor, NotificationInterceptor } from "./home";
+import { ParamsInterceptor, NotificationInterceptor } from "./home";
 
 import localzh from "@angular/common/locales/zh-Hans";
 import { registerLocaleData } from "@angular/common";
@@ -15,6 +15,7 @@ import { CategoryModule } from "./category/category.module";
 import { ChatModule } from "./chat/chat.module";
 import { MyModule } from "./my/my.module";
 import { ProductModule } from "./product/product.module";
+import { HomeModule } from "./home/home.module";
 
 @NgModule({
   declarations: [AppComponent],

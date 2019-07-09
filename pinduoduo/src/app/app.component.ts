@@ -1,18 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FootMenu } from "./share/components";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { Router, NavigationEnd } from "@angular/router";
-import { filter, map } from "rxjs/operators";
+import { filter, map, switchMap } from "rxjs/operators";
+import { DialogService } from "./dialog/services";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   selectedIndex$: Observable<number>;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dialogService: DialogService) {}
 
   ngOnInit(): void {
     // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -41,5 +43,9 @@ export class AppComponent implements OnInit {
       : path === "my"
       ? 4
       : 0;
+  }
+
+  removeDialog() {
+    this.dialogService.close();
   }
 }

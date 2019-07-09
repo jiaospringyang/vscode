@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Location } from "@angular/common";
 
 @Component({
@@ -7,7 +7,8 @@ import { Location } from "@angular/common";
   styleUrls: ["./back-button.component.css"]
 })
 export class BackButtonComponent implements OnInit {
-  imageBackground = true;
+  @Input() imageBackground = true;
+  @Input() inline = "inline-block";
   constructor(private location: Location) { }
 
   ngOnInit() {

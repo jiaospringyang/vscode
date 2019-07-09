@@ -1,0 +1,84 @@
+:host {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.price-container {
+  margin: 0;
+  padding: 0;
+}
+
+.product-image {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid gray;
+  top: -2rem;
+  left: 2rem;
+}
+
+.price-spec {
+  position: fixed;
+  left: calc(100% - 9rem);
+  text-align: left;
+}
+
+.close-button {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  left: calc(100% - 2rem);
+}
+
+
+.confirm-button {
+  width: 100%;
+  height: 2rem;
+  top: calc(100% - 2rem);
+  position: fixed;
+}
+
+.confirm-button button {
+  width: 100%;
+  height: 100%;
+}
+
+.kinds {
+  position: absolute;
+  top: 10rem;
+  margin: 10;
+  padding: 10px;
+  text-align: left;
+  word-break: keep-all;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.kinds-items {
+  margin: 10px;
+  display: inline;
+  line-height: 2rem;
+}
+
+.amount {
+  position: absolute;
+  top: 15rem;
+  padding: 10px;
+  text-align: left;
+  word-break: keep-all;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+app-product-amount {
+  position: fixed;
+  right: 20px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.selected-style {
+  background-color: red;
+}

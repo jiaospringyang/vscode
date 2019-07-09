@@ -11,6 +11,7 @@ import { HomeService, GridItem } from "../../home.service";
 import { token } from "src/app/share/components";
 import { Observable } from "rxjs";
 import { filter, map, switchMap } from "rxjs/operators";
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: "app-home-detail",

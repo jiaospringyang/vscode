@@ -5,7 +5,7 @@ export interface ProductVariant {
    name: string;
    price: number;
    listPrice: number;
-   productVariantsImage: ImageSlider[];
+   productVariantImages: ImageSlider[];
    product: Product;
 }
 

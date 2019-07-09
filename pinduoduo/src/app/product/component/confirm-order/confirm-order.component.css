@@ -1,0 +1,120 @@
+:host, .container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+
+.order-content-container {
+  display: flex;
+  flex: 1;
+}
+
+.order-title-name {
+  text-align: center;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 90%;
+}
+
+.order-info,
+.underline {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.location,
+.more {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 1rem 2rem;
+}
+
+.user-info {
+  width: 80%;
+}
+
+.item {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0 0.5rem;
+  display: flex;
+}
+
+.shop-image {
+  width: 2rem;
+  height: 2rem;
+}
+
+.shop-content,
+.count-content {
+  display: flex;
+  padding-left: 2rem;
+}
+
+.shop-name {
+  font-size: x-large;
+  margin-left: 10px;
+}
+
+.count-title {
+  font-weight: bold;
+}
+
+app-product-amount {
+  position: fixed;
+  right: 40px;
+}
+
+.product-image {
+  width: 10rem;
+  height: 10rem;
+}
+
+.product-content {
+  display: flex;
+  margin: 1rem;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  place-content: space-around;
+}
+
+.price-des {
+  color: green;
+  border: 1px solid;
+}
+
+.total-des,
+.total-price {
+  color: red;
+}
+
+.right-now-buy {
+  background-color: red;
+  color: #fff;
+}
+
+.right-now-buy {
+  display: inline;
+}
+
+.toolbar {
+  display: flex;
+  place-content: space-around;
+  margin: 1rem;
+  height: 2rem;
+}
+
+button {
+  background: red;
+  color: #fff;
+  width: 6rem;
+  height: 100%;
+}

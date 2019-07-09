@@ -1,0 +1,27 @@
+.payment {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+  place-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.selected-image {
+    position: absolute;
+    right: 2px;
+}

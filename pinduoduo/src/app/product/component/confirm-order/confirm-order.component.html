@@ -1,0 +1,53 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="container">
+    <div class="order-title">
+      <app-back-button class="back-button" [imageBackground]="false"></app-back-button>
+      <div class="order-title-name">确认订单</div>
+    </div>
+    <div class="order-info">
+      <img class="location" src="assets/icons/location.png" alt="" />
+      <div class="user-info">
+        <div class="user-name">张三</div>
+        <div class="user-mobile">138888888888</div>
+        <div class="user-address">陕西省韩城市芝川镇</div>
+      </div>
+      <img class="more" src="assets/icons/navigate_next.png" alt="" />
+    </div>
+    <ul class="underline">
+      <li class="item" *ngFor="let item of underlines; let odd = odd"
+        [ngStyle]="{'background-color': odd ? 'red' : 'blue'}"></li>
+    </ul>
+    <div class="content">
+      <div class="shop-content">
+        <img class="shop-image" src="assets/icons/fav_store.png" alt="" />
+        <div class="shop-name">追梦运动专营店</div>
+      </div>
+      <div class="product-content">
+        <img [src]="data.variant.productVariantImages[0].imgUrl" alt="" class="product-image">
+        <div class="product-info">
+          <div class="product title">{{data.variant.product.title}}</div>
+          <div class="product name">款式：{{data.variant.name}}</div>
+          <div class="product-price">
+            <span>{{data.variant.price | currency: "CNY"}}/件</span>
+            <span class="price-des">退货包运费</span>
+          </div>
+        </div>
+      </div>
+      <div class="count-content">
+        <span class="count-title">数量</span>
+        <app-product-amount [count]="data.count" (amountChanged)="handleAmountChanged($event)"></app-product-amount>
+      </div>
+      <div class="payment">
+        <app-payment></app-payment>
+      </div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <span>实付款:</span>
+    <span class="total-price">{{ totalPrice$ | async | currency: "CNY" }}</span>
+    <span class="total-des">免邮费</span>
+    <div class="right-now-buy">
+      <button>立即支付</button>
+    </div>
+  </div>
+</ng-container>

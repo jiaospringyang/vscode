@@ -11,9 +11,14 @@ import {
   ProductCardComponent
 } from "./components";
 import { GridItemDirective } from "./directive/grid-item.directive";
-import { GridItemImageDirective, GridItemTitleDirective, ProductTagDirective } from "./directive";
+import {
+  GridItemImageDirective,
+  GridItemTitleDirective,
+  ProductTagDirective
+} from "./directive";
 import { AppAgoPipe } from "./pipes";
 import { PriceAvatarDirective } from "./directive/price-avatar.directive";
+import { DialogModule } from "../dialog";
 
 @NgModule({
   declarations: [
@@ -47,7 +52,8 @@ import { PriceAvatarDirective } from "./directive/price-avatar.directive";
     VerticalGridComponent,
     ProductCardComponent,
     ProductTagDirective,
-    PriceAvatarDirective
+    PriceAvatarDirective,
+    DialogModule
   ]
 })
 export class ShareModule {}

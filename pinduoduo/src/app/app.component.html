@@ -1,2 +1,4 @@
 <router-outlet></router-outlet>
 <app-tab-menu [selectedId]="selectedIndex$ | async" (selectTabMenu)="changeTabMenu($event)"></app-tab-menu>
+<div id="overlay" class="hidden" (click)="removeDialog()"></div>
+<div id="dialog-container" class="hidden"></div>
