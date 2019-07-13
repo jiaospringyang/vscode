@@ -1,6 +1,94 @@
 :host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  margin: 10px;
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: 100px 100px 1fr;
+  grid-template-rows: 2;
+  margin: 10px;
+  padding: 0;
+  grid-auto-flow: row;
+}
+
+.avatar img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 2.5rem;
+}
+
+.user-spec,
+.buttons {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.user-name,
+.wall,
+.button1,
+.button2 {
+  margin: 5px;
+}
+
+.button1,
+.button2 {
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+.button1 img,
+.button2 img,
+.user-name img,
+.wall img,
+.advert-navig img,
+.order-title-event img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.user-info img {
+  margin: 0 8px;
+}
+
+.advertisement {
+  background-color: rgb(62, 15, 94);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: rgb(231, 156, 71);
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.advert-navig span {
+  border: 1px solid #898913;
+  background-color: #898913;
+  color: antiquewhite;
+  border-radius: 10px;
+}
+
+.order-title {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex: 1;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.order-title-event {
+    color: gray;
 }

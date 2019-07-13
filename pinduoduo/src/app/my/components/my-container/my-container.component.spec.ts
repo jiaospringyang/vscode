@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "@angular/platform-browser";
+import { DebugElement } from "@angular/core";
 
-import { MyContainerComponent } from './my-container.component';
+import { MyContainerComponent } from "./my-container.component";
 
-describe('MyContainerComponent', () => {
+describe("MyContainerComponent", () => {
   let component: MyContainerComponent;
   let fixture: ComponentFixture<MyContainerComponent>;
 
@@ -22,7 +22,7 @@ describe('MyContainerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -9,6 +9,7 @@ export class PriceAvatarDirective {
   @HostBinding("style.width")
   avatarSize = "1.5rem";
 
+  @Input()
   @HostBinding("style.border-radius")
   radius = "1.5rem";
 }

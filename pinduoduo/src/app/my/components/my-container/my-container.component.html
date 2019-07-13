@@ -1,3 +1,52 @@
-<p>
-  my-container works!
-</p>
+<ng-container *ngIf="profile$ | async as profile">
+    <div class="user-info">
+        <img appPriceAvatar
+             [avatarSize]="'5rem'" [radius]="'2.5rem'"
+             [src]="profile.avatar" alt="">
+        <div class="user-spec">
+          <div class="user-name">
+            <span>{{profile.name}}</span>
+            <img src="assets/icons/wechat.png" alt="">
+          </div>
+          <div class="wall">
+            <span>勋章墙</span>
+            <img src="assets/icons/navigate_next.png" alt="">
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="button1">
+            <img src="assets/icons/cashback.png" alt="">
+            <span>拼单返现</span>
+          </div>
+          <div class="button2">
+            <img src="assets/icons/membership.png" alt="">
+            <span>省钱月卡</span>
+          </div>
+        </div>
+      </div>
+      <div class="advertisement">
+        <div class="advert-title">品牌特卖</div>
+        <div class="advert-navig">
+          <span>自然堂直降</span>
+          <img src="assets/icons/navigate_next.png" alt=""></div>
+      </div>
+      <div class="order">
+        <div class="order-title">
+          <div class="order-title-name">我的订单</div>
+          <div class="order-title-event">
+            查看全部
+            <img src="assets/icons/navigate_next.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="order-content">
+        <app-horizontal-grid [displayCol]="'5'" [cols]="'5'"
+                             [girdTitle]="'true'">
+          <div appGridItem *ngFor="let item of orderContents">
+            <img appGridItemImage [src]="item.icon" [alt]="item.link">
+            <span appGridItemTitle>{{ item.title }}</span>
+          </div>                   
+        </app-horizontal-grid>
+      </div>
+      <div class="service"></div>
+</ng-container>
