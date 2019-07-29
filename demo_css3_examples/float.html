@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>float</title>
+</head>
+<body>
+    <section>
+        <style>
+            .parent {
+               border: 1px solid red;
+               width: 300px;
+               /* overflow: hidden; */
+            }
+
+            .outer {
+                width: 500px;
+                height: 200px;
+                background-color: green;
+            }
+
+            .big {
+                width: 200px;
+                height: 200px;
+                background-color: gray;
+                float: left;
+            }
+
+            .small {
+                width: 50px;
+                height: 100px;
+                background-color: yellow;
+                float: left;
+            }
+
+            /* .clear {
+                clear: both;
+            } */
+
+            /* .clearfix:after {
+                display: block;
+                height: 0;
+                clear: both;
+                content: "";
+                /* visibility: hidden; 
+            } */
+
+            .clearfix::after, .clearfix::before {
+                content: "";
+                display: table;
+            }
+
+            .clearfix::after {
+                clear: both;
+            }
+
+            .clearfix {
+                *zoom: 1;
+            }
+        </style>
+        <article>
+            <div class="parent clearfix">
+                <div class="big"></div>
+                <div class="small"></div>
+                <!-- <div class="clear"></div> -->
+            </div>
+            <div class="outer"></div>
+        </article>
+    </section>
+</body>
+</html>

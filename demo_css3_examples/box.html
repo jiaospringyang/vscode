@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盒模型</title>
+    <style>
+        html * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="sec">
+        <style>
+            #sec {
+                background-color: red;
+            }    
+
+            .art-box {
+                height: 100px;
+                margin-top: 10px;
+                background: yellow;
+                margin-bottom: 30px;
+            }
+
+            .art-box1 {
+                height: 100px;
+                margin-top: 10px;
+                background: yellowgreen;
+            }
+        </style>
+        <article class="art-box"></article>
+        <article class="art-box1"></article>
+    </section>
+</body>
+</html>

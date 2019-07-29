@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layout-box</title>
+    <style>
+        html * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section article>div {
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="float-box">
+        <style media="screen">
+            .float-box .content .left {
+                float: left;
+                width: 100px;
+                background: red;
+            }
+
+            .float-box .content .center {
+                background: gray;
+            }
+
+            .float-box .content .right {
+                float: right;
+                width: 100px;
+                background-color: green;
+            }
+        </style>
+        <article class="content">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center"></div>
+        </article>
+    </section>
+
+    <!-- <section class="absolute-box">
+        <style media="screen">
+            .absolute-box .content {
+                position: relative;
+            }
+
+            .absolute-box .content .left,
+            .absolute-box .content .right {
+                position: absolute;
+                width: 100px;
+            }
+
+            .absolute-box .content .left {
+                left: 0;
+                background: red;
+            }
+
+            .absolute-box .content .right {
+                right: 0;
+                background: yellow;
+            }
+
+            .absolute-box .content .center {
+                background: gray;
+                position: absolute;
+                left: 100px;
+                right: 100px;
+            }
+        </style>
+        <article class="content">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </article>
+    </section> -->
+
+    <section class="flex-box">
+        <style media="screen">
+            .flex-box .content {
+                display: flex;
+            }
+
+            .flex-box .content .left {
+                width: 100px;
+                background-color: red;
+            }
+
+            .flex-box .content .right {
+                width: 100px;
+                background-color: green;
+            }
+
+            .flex-box .content .center {
+                flex: 1;
+                background-color: gray;
+            }
+        </style>
+        <article class="content">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </article>
+    </section>
+
+    <section class="table-box">
+        <style media="screen">
+            .table-box .content {
+                display: table;
+                width: 100%;
+                height: 100px;
+            }
+
+            .table-box .content .left,
+            .table-box .content .center,
+            .table-box .content .right {
+                display: table-cell;
+            }
+
+            .table-box .content .left {
+                width: 100px;
+                background: red;
+            }
+
+            .table-box .content .center {
+                background-color: gray;
+            }
+
+            .table-box .content .right {
+                width: 100px;
+                background-color: yellow;
+            }
+        </style>
+        <article class="content">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </article>
+    </section>
+
+    <section class="grid-box">
+        <style media="screen">
+            .grid-box .content {
+                display: grid;
+                width: 100%;
+                grid-template-rows: 100px;
+                grid-template-columns: 100px 1fr 100px;
+            }
+
+            .grid-box .content .left {
+                background-color: red;
+            }
+
+            .grid-box .content .center {
+                background-color: gray;
+            }
+
+            .grid-box .content .right {
+                background-color: green;
+            }
+        </style>
+        <article class="content">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </article>
+    </section>
+</body>
+
+</html>
