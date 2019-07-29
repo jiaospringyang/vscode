@@ -1,0 +1,20 @@
+#main{-webkit-column-width: 202px;
+      -moz-column-width: 202px;
+      -o-column-width:202px;
+      -ms-column-width:202px;
+      -webkit-column-rule: 2px dashed #f00;
+      -moz-column-rule: 2px dashed #f00;
+      -o-column-rule:2px dashed #f00;
+      -ms-column-rule:2px dashed #f00;}
+
+.box{padding: 10px 0 0 15px;}
+
+.pic{
+	 adding:10px;
+	 border:1px solid #ccc;
+	 border-radius: 5px;
+	 box-shadow: 0 5px #ccc;}
+
+.pic img{width:165px;
+    	 height: auto;
+		 display: block;}
