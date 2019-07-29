@@ -1,0 +1,6 @@
+var age = 20;
+
+for(var i = 0; i < 10; i++) {
+   age++;
+   console.log("==xx=age:" + age);
+}
